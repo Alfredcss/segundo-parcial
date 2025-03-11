@@ -1,0 +1,79 @@
+<div style="margin: 20px;">
+    <h1>Catálogo de Camiones</h1>
+  
+    <h4>Alta de Camiones</h4>
+  
+    <div class="col-sm-4">
+        <p>
+            <label>Nombre:</label>
+            <input type="text" class="form-control" [(ngModel)]="camion.nombre"/>
+        </p>
+        <p>
+            <label>Salida:</label>
+            <input type="text" class="form-control" [(ngModel)]="camion.salida"/>
+        </p>
+        <p>
+            <label>Destino:</label>
+            <input type="text" class="form-control" [(ngModel)]="camion.destino"/>
+        </p>
+        <p>
+            <label>Número de Ejes:</label>
+            <input type="number" class="form-control" [(ngModel)]="camion.numeroDeEjes"/>
+        </p>
+        <p>
+            <label>Capacidad:</label>
+            <input type="text" class="form-control" [(ngModel)]="camion.capacidad"/>
+        </p>
+        <table>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-primary"
+                        (click)="insertarCamion()">Insertar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-warning"
+                        (click)="updateCamion()">Editar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger"
+                        (click)="deleteCamion()">Eliminar</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <hr />
+  
+    <h4>Listado de Camiones</h4>
+  
+    <table class="table">
+        <thead>
+            <th>Nombre</th>
+            <th>Salida</th>
+            <th>Destino</th>
+            <th>Número de Ejes</th>
+            <th>Capacidad</th>
+            <th>Seleccionar</th>
+        </thead>
+        <tbody>
+
+            @for (camion of camiones; track camion.id) {
+                <tr>
+                    <td>{{ camion.nombre }}</td>
+                    <td>{{ camion.salida }}</td>
+                    <td>{{ camion.destino }}</td>
+                    <td>{{ camion.numeroDeEjes }}</td>
+                    <td>{{ camion.capacidad }}</td>
+                    <td>
+                        <button type="button" class="btn btn-success"
+                            (click)="selectCamion(camion)">
+                            Seleccionar
+                        </button>
+                    </td>
+                </tr>
+            }
+            
+                
+            
+        </tbody>
+    </table>
+  </div>
