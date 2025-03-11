@@ -25,7 +25,7 @@ export class CamionComponent {
   
   //metodo para insertar un libro desde el form
   
-  insertarCamion(){
+  agregarCamion(){
     this.camionService.agregarCamion(this.camion);
     this.camion = new Camion();
     this.getCamiones();

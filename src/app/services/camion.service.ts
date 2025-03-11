@@ -27,7 +27,7 @@ export class CamionService {
         numeroDeEjes: camion.numeroDeEjes,
         capacidad: camion.capacidad
       };
-      await addDoc(camionesCollection, camion);
+      await addDoc(camionesCollection, camionData);
     }
 
   async modificarCamion(camion: Camion){
